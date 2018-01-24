@@ -1,3 +1,10 @@
+menu:
+  Home: '主页'
+  Archives: '归档'
+  Categories: '分类'
+  Tags: '标签'
+  About: '关于我'
+  
 index:
     home: '主页'
     search: '搜索'
@@ -35,3 +42,8 @@ insight:
     categories: '分类'
     tags: '标签'
     untitled: '(未命名)'
+
+reward:
+    donate: 打赏
+    wechatpay: 微信
+    alipay: 支付宝

@@ -1,4 +1,3 @@
-title: "About"
-layout: "page"
+title: "关于我"
+layout: "post"
 ---
-
