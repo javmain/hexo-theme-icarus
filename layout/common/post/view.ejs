@@ -1,0 +1,8 @@
+<% if (theme.plugins.lean_analytics && post.date ) { %>
+   <div class="<%= class_name %>"</div>
+        <i class="fa fa-eye"></i>
+        <span class="leancloud_visitors" id="<%- url_for(post.path) %>" class="leancloud_visitors" data-flag-title="<%= post.title %>">
+            <span class="leancloud-visitors-count"><i class="fa fa-spinner fa-spin fa-fw margin-bottom"></i></span>
+        </span>
+    </div>
+<% } %>

@@ -85,6 +85,8 @@ plugins:
     google_site_verification: # enter Google site verification code
     baidu_analytics: # enter Baidu Analytics hash key
     mathjax: false # options: true, false
+    busuanzi:  # options: true, false
+    lean_analytics: # options: true, false
 
 # Miscellaneous
 miscellaneous:
@@ -102,3 +104,7 @@ reward:
     reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
     wechatpay: /css/images/wechat-reward-image.jpg
     alipay: /css/images/alipay-reward-image.jpg
+
+leancloud_visitors:
+    app_id:
+    app_key:
