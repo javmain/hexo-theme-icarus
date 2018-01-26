@@ -36,7 +36,13 @@
         <%- js('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML') %>
     <% } %>
     <% if (theme.plugins.busuanzi) { %>
-        <%- js('//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js') %>
+        <script>
+            $(function() {
+                loadScript('//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js',function(){
+                    console.log("load busuanzi js success");
+                });
+            });
+        </script>
     <% } %>
     <% if (theme.plugins.lean_analytics) { %>
         <%- partial('plugin/lean-analytics') %>
