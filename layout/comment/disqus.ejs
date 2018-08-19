@@ -3,10 +3,11 @@
     var disqus_config = function () {
         <% if (page.permalink) { %>
             this.page.url = '<%= page.permalink %>';
-        <% } else { %>
-            this.page.url = '<%= config.url %><%= url_for(page.path) %>';
         <% } %>
-        this.page.identifier = '<%= page.disqusId || page.slug %>';
+
+        this.page.title = '<%= page.title %>';
+        
+        this.page.identifier = '<%= page.disqusId || page.slug || page.path %>';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
