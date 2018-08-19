@@ -38,11 +38,12 @@ code
 
 .outer
     clearfix()
-    max-width: (column-width + gutter-width) * columns + gutter-width
+    max-width: 80%
     margin: 0 auto
     padding: 0 gutter-width
     @media mq-mini
         padding: 0
+        max-width: 100%
 
 .left, .alignleft
     float: left
@@ -95,4 +96,8 @@ if sidebar is left
     #main
         float: right
     #profile
+        float: right
+
+if sidebar is right
+    #sidebar
         float: right
