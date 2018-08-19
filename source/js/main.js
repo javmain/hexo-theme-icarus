@@ -2,21 +2,35 @@
     var toTop = ($('#sidebar').height() - $(window).height()) + 60;
     // Caption
     $('.article-entry').each(function(i) {
-        $(this).find('img').each(function() {
-            if (this.alt) {
+        $(this).find('img').filter(function (element) {
+            return $(this).hasClass('');
+        }).each(function() {
+            // add image caption
+            if (this.alt && !(!!$.prototype.justifiedGallery && $(this).parent('.justified-gallery').length)) {
                 $(this).after('<span class="caption">' + this.alt + '</span>');
             }
 
-            $(this).wrap('<a href="' + this.src + '" title="' + this.alt + '" class="gallery-item"></a>');
+            if ($(this).parent().prop("tagName") !== 'A') {
+                $(this).wrap('<a href="' + ($(this).attr("data-imgbig") ? $(this).attr("data-imgbig") : this.src) + '" title="' + this.alt + '" class="gallery-item"></a>');
+            }
         });
-
     });
-    if (lightGallery) {
+    if (typeof lightGallery != 'undefined') {
         var options = {
-            selector: '.gallery-item',
+            selector: '.gallery-item'
         };
-        lightGallery($('.article-entry')[0], options);
+        $('.article-entry').each(function(i, entry) {
+            lightGallery(entry, options);
+        });
         lightGallery($('.article-gallery')[0], options);
+    }
+    if (!!$.prototype.justifiedGallery) {  // if justifiedGallery method is defined
+        var options = {
+            rowHeight: 140,
+            margins: 4,
+            lastRow: 'justify'
+        };
+        $('.justified-gallery').justifiedGallery(options);
     }
 
     // Profile card
@@ -49,3 +63,25 @@
     }
 
 })(jQuery);
+
+
+function loadScript(src, callback) {
+    var script = document.createElement('script'),
+        head = document.getElementsByTagName('head')[0];
+    script.type = 'text/javascript';
+    script.charset = 'UTF-8';
+    script.src = src;
+    if (script.addEventListener) {
+        script.addEventListener('load', function () {
+            callback();
+        }, false);
+    } else if (script.attachEvent) {
+        script.attachEvent('onreadystatechange', function () {
+            var target = window.event.srcElement;
+            if (target.readyState == 'loaded') {
+                callback();
+            }
+        });
+    }
+    head.appendChild(script);
+}

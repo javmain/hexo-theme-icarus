@@ -36,3 +36,7 @@ insight:
     tags: 'Tags'
     untitled: '(Untitled)'
 
+reward:
+    donate: reward
+    wechatpay: wechat
+    alipay: alipay
