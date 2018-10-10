@@ -33,12 +33,12 @@
         <script type="text/x-mathjax-config">
             MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
         </script>
-        <%- js('https://cdn.bootcss.com/mathjax/2.7.4/MathJax.js?config=TeX-AMS-MML_HTMLorMML') %>
+        <%- js('https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax') %>
     <% } %>
     <% if (theme.plugins.busuanzi) { %>
         <script>
             $(function() {
-                loadScript('//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js',function(){
+                loadScript('//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js',function(){
                     console.log("load busuanzi js success");
                 });
             });
